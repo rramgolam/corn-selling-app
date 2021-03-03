@@ -1,12 +1,26 @@
 const http = require("http");
 const fs = require("fs");
 
-const host = 'localhost';
 const port = 8000;
 
-const requestListener = function (req, res) {};
 
-const server = http.createServer(requestListener);
-server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
-});
+http.createServer(function (req, res) {
+
+
+  	var url = req.url;
+
+  	if (url === "/") {
+  		url = "/index.html";
+  	} 
+
+	fs.readFile(__dirname + url, function (err,data) {
+
+	if (err) {
+	  res.writeHead(404);
+	  res.end(JSON.stringify(err));
+	  return;
+	}
+	res.writeHead(200);
+	res.end(data);
+	});
+}).listen(port);
