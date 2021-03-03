@@ -47,7 +47,7 @@ function decrementNumBags() {
 }
 
 function updateDisplay(value) {
-	document.getElementById("costDisplay").innerText = calculateTransportCost(value);
+	document.getElementById("costDisplay").innerText = "£" + calculateTransportCost(value).toFixed(2);
 }
 	
 

@@ -18,11 +18,15 @@
   <body onload="onLoad()">
     <h1>Travel Cost Calculator!</h1>
 
-   	<input type="button" value="-" onclick="decrementNumBags()">
-    <input type="text" id="bagInputField" disabled></input>
-    <input type="button" value="+" onclick="incrementNumBags()">
+    <div>Please choose how many bags of corn you want to sell <br/><br/>
+	   	<input type="button" value="-" onclick="decrementNumBags()">
+	    <input type="text" id="bagInputField" disabled></input>
+	    <input type="button" value="+" onclick="incrementNumBags()">
+	</div>
+	<h2>Total Cost</h2>
+    <div id="costDisplay" style="font: italic small-caps bold 40px/30px Georgia, serif;"></div>
 
-    <div id="costDisplay"></div>
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 
