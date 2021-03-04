@@ -3,7 +3,7 @@ window.mixtests = {
 	testValidInput: function() {
 
 		var result = calculateTransportCost(1,2);
-		if (result !== 7 * COST_OF_TRANSPORT) {
+		if (result !== 8 * COST_OF_TRANSPORT) {
 			throw "Incorrect result";
 		}
 		result = calculateTransportCost(1,1);
@@ -11,7 +11,7 @@ window.mixtests = {
 			throw "Incorrect result";
 		}
 		result = calculateTransportCost(2,1);
-		if (result !== 7 * COST_OF_TRANSPORT) {
+		if (result !== 8 * COST_OF_TRANSPORT) {
 			throw "Incorrect result";
 		}
 

@@ -16,7 +16,7 @@ function calculateTransportCost(numBags, numGeese) {
 		if (numBags === numGeese) {
 			result = COST_OF_TRANSPORT * 4;
 		} else {
-			result = COST_OF_TRANSPORT * 7;
+			result = COST_OF_TRANSPORT * 8;
 		}
 
 	} else if (numBags > 0) {
