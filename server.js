@@ -1,7 +1,15 @@
 const http = require("http");
 const fs = require("fs");
 
+var port;
+if (process.env.PORT === undefined) {
+	port = 8080;
+} else {
+	port = process.env.PORT;
+}
+
 http.createServer(function (req, res) {
+
 
   	var url = req.url;
 
@@ -22,4 +30,4 @@ http.createServer(function (req, res) {
 		res.end(data);
 	});
 
-}).listen(process.env.PORT);
+}).listen(port);
