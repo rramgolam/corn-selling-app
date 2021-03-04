@@ -1,0 +1,9 @@
+{
+	"name": "farmer-martens-trade-app",
+	"version": "0.0.1",
+	"description": "",
+	"main": "httpserver.js",
+	"scripts": {},
+	"author": "",
+	"licence": ""
+}
