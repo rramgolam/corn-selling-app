@@ -1,9 +1,6 @@
 const http = require("http");
 const fs = require("fs");
 
-const port = 8000;
-
-
 http.createServer(function (req, res) {
 
   	var url = req.url;
@@ -25,4 +22,4 @@ http.createServer(function (req, res) {
 		res.end(data);
 	});
 
-}).listen(port);
+}).listen(process.env.PORT);
