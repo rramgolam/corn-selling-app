@@ -1,6 +1,6 @@
 function testOneIncrementAboveAcceptedRange() {
 	try {
-		var result = calculateTransportCost(16);	
+		var result = calculateTransportCost(MAXIMUM_BAGS_OF_CORN+1);	
 	} catch (err) {
 		if (err !== "Out of Bounds") throw "Failed Test - testOneIncrementAboveAcceptedRange";
 	}
@@ -8,7 +8,7 @@ function testOneIncrementAboveAcceptedRange() {
 
 function testOneDecrementBelowAcceptedRange() {
 	try {
-		var result = calculateTransportCost(0);	
+		var result = calculateTransportCost(MINIMUM_BAGS_OF_CORN-1);	
 	} catch (err) {
 		if (err !== "Out of Bounds") throw "Failed Test - testOneDecrementBelowAcceptedRange";
 	}
@@ -16,17 +16,17 @@ function testOneDecrementBelowAcceptedRange() {
 
 function testMaximumValue() {
 	try {
-		var result = calculateTransportCost(15);	
+		var result = calculateTransportCost(MAXIMUM_BAGS_OF_CORN);	
 	} catch (err) {
 		if (err !== "Out of Bounds") throw "Failed Test - testMaximumValue";
 	}
-	if (result !== 7.5) throw "Failed Test - testMaximumValue";
+	if (result !== 4.611686018427388e18) throw "Failed Test - testMaximumValue";
 
 }
 
 function testMinimumValue() {
-	var result = calculateTransportCost(1);	
-	if (result !== 0.5) {
+	var result = calculateTransportCost(MINIMUM_BAGS_OF_CORN);	
+	if (result !== 0) {
 		throw "Failed Test - testMinimumValue";
 	}
 }
