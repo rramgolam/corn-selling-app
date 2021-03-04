@@ -4,7 +4,7 @@ window.corntests = {
 		try {
 			var result = calculateTransportCost(MAXIMUM_BAGS_OF_CORN+1);	
 		} catch (err) {
-			if (err !== "Out of Bounds") throw "Failed Test - testOneIncrementAboveAcceptedRange";
+			if (err !== "numBags greater than maximum") throw "Failed Test - testOneIncrementAboveAcceptedRange";
 		}
 	},
 
@@ -12,16 +12,12 @@ window.corntests = {
 		try {
 			var result = calculateTransportCost(MINIMUM_BAGS_OF_CORN-1);	
 		} catch (err) {
-			if (err !== "Out of Bounds") throw "Failed Test - testOneDecrementBelowAcceptedRange";
+			if (err !== "numBags less than minimum") throw "Failed Test - testOneDecrementBelowAcceptedRange";
 		}
 	},
 
 	testMaximumValue: function () {
-		try {
-			var result = calculateTransportCost(MAXIMUM_BAGS_OF_CORN);	
-		} catch (err) {
-			if (err !== "Out of Bounds") throw "Failed Test - testMaximumValue";
-		}
+		var result = calculateTransportCost(MAXIMUM_BAGS_OF_CORN);	
 		if (result !== 4.611686018427388e18) throw "Failed Test - testMaximumValue";
 
 	},
@@ -37,16 +33,12 @@ window.corntests = {
 		try {
 			var result = calculateTransportCost("ABC");	
 		} catch (err) {
-			if (err !== "Invalid type exception") throw "Failed Test - testStringInput";
+			if (err !== "Invalid type exception for numBags") throw "Failed Test - testStringInput";
 		}
 	},
 
 	testValidValue: function () {
-		try {
-			var result = calculateTransportCost(6);	
-		} catch (err) {
-			if (err !== "Out of Bounds") throw "Failed Test - testValidValue";
-		}
+		var result = calculateTransportCost(6);	
 		if (result !== 3) throw "Failed Test - testValidValue";
 	},
 
