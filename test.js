@@ -1,62 +1,60 @@
-function testInvalidExtremeUpper() {
-
+function testOneIncrementAboveAcceptedRange() {
 	try {
 		var result = calculateTransportCost(16);	
 	} catch (err) {
-		if (err !== "Out of Bounds") throw "Failed Test - testInvalidExtremeUpper";
+		if (err !== "Out of Bounds") throw "Failed Test - testOneIncrementAboveAcceptedRange";
 	}
-
 }
 
-function testInvalidExtremeLower() {
+function testOneDecrementBelowAcceptedRange() {
 	try {
 		var result = calculateTransportCost(0);	
 	} catch (err) {
-		if (err !== "Out of Bounds") throw "Failed Test - testInvalidExtremeUpper";
+		if (err !== "Out of Bounds") throw "Failed Test - testOneDecrementBelowAcceptedRange";
 	}
 }
 
-function testValidExtremeUpper() {
+function testMaximumValue() {
 	try {
 		var result = calculateTransportCost(15);	
 	} catch (err) {
-		if (err !== "Out of Bounds") throw "Failed Test - testInvalidExtremeUpper";
+		if (err !== "Out of Bounds") throw "Failed Test - testMaximumValue";
 	}
-	if (result !== 7.5) throw "Failed Test - testValidExtremeUpper";
+	if (result !== 7.5) throw "Failed Test - testMaximumValue";
 
 }
 
-function testValidExtremeLower() {
+function testMinimumValue() {
 	var result = calculateTransportCost(1);	
 	if (result !== 0.5) {
-		throw "Failed Test - testValidExtremeLower";
+		throw "Failed Test - testMinimumValue";
 	}
 }
 
-function testInvalidType() {
+function testStringInput() {
 	try {
 		var result = calculateTransportCost("ABC");	
 	} catch (err) {
-		if (err !== "Invalid type exception") throw "Failed Test - testInvalidType";
+		if (err !== "Invalid type exception") throw "Failed Test - testStringInput";
 	}}
 
-function testValid() {
+function testValidValue() {
 	try {
 		var result = calculateTransportCost(6);	
 	} catch (err) {
-		if (err !== "Out of Bounds") throw "Failed Test - testValid";
+		if (err !== "Out of Bounds") throw "Failed Test - testValidValue";
 	}
-	if (result !== 3) throw "Failed Test - testValid";
+	if (result !== 3) throw "Failed Test - testValidValue";
 }
 
 
 function testAll(){
-	testInvalidExtremeUpper();
-	testInvalidExtremeLower();
-	testValidExtremeUpper();
-	testValidExtremeLower();
-	testInvalidType();
-	testValid();
+	testOneIncrementAboveAcceptedRange();
+	testOneDecrementBelowAcceptedRange();
+	testMaximumValue();
+	testMinimumValue();
+	testStringInput();
+	testValidValue();
 	console.log("All tests passing.");
 }
 
