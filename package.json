@@ -2,7 +2,7 @@
 	"name": "farmer-martens-trade-app",
 	"version": "0.0.1",
 	"description": "",
-	"main": "httpserver.js",
+	"main": "server.js",
 	"scripts": {},
 	"author": "",
 	"licence": ""
